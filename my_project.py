@@ -1,0 +1,10 @@
+import sqlite3
+connection= sqlite3.connect('okul.db')
+cursor = connection.cursor()
+cursor.execute("CREATE TABLE IF NOT EXISTS students(name TEXT,grade INTEGER)")
+student_name= input("enter student name: ")
+student_score=int(input("enter student score: "))
+cursor.execute ("INSERT INTO students values(?,?)",(student_name,student_score))
+connection.commit()
+print("student entered database succesfully")
+connection.close()
