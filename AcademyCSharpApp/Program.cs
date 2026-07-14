@@ -1,6 +1,4 @@
 ﻿//PROJECT: SMART CART TOTAL CALCULATOR
-using System.Diagnostics.CodeAnalysis;
-
 double[] cartItems={19.99,45.50,12.00,99.99};
 double totalSum=0.00;
 Console.WriteLine("Iterating through your cart items...");
