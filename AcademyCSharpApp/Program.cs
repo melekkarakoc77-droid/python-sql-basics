@@ -1,10 +1,9 @@
 ﻿// PROJECT: SMART SHIPPING & DISCOUNT SYSTEM 
-using System.Diagnostics.CodeAnalysis;
-
-double cartTotal=120.00;
+Console.Write("please enter your cart total: $");
+string userInput=Console.ReadLine()!;
+double cartTotal=double.Parse(userInput);
 double finalTotal=cartTotal;
 double shippingCost=0.00;
-Console.WriteLine("original cart total: ${cartTotal}");
 Console.WriteLine("---------------------------------");
 if (cartTotal>=100.00)
 {
