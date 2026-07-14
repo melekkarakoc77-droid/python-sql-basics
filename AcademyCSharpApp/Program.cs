@@ -1,30 +1,14 @@
-﻿// PROJECT: SMART SHIPPING & DISCOUNT SYSTEM 
-Console.Write("please enter your cart total: $");
-string userInput=Console.ReadLine()!;
-double cartTotal=double.Parse(userInput);
-double finalTotal=cartTotal;
-double shippingCost=0.00;
-Console.WriteLine("---------------------------------");
-if (cartTotal>=100.00)
-{
-    Console.WriteLine("condition met:cart is $100 or more");
-    Console.WriteLine("result:you got %10 dicount and free shipping");
-    double discount=cartTotal * 0.10;
-    finalTotal=cartTotal - discount;
-}
-else if(cartTotal>=50.00)
-{
-    Console.WriteLine("condition met:cart s between $50 and $100");
-    Console.WriteLine("result:you got free shipping");
-}
-else
-{
-    Console.WriteLine("condition met:cart is under $50");
-    Console.WriteLine("result:shipping cost is $9.99");
+﻿//PROJECT: SMART CART TOTAL CALCULATOR
+using System.Diagnostics.CodeAnalysis;
 
-    shippingCost=9.99;
-    finalTotal=cartTotal+shippingCost;
+double[] cartItems={19.99,45.50,12.00,99.99};
+double totalSum=0.00;
+Console.WriteLine("Iterating through your cart items...");
+Console.WriteLine("-------------------------------------");
+foreach(double price in cartItems)
+{
+    Console.WriteLine($"Item found in cart: ${price}");
+    totalSum=totalSum + price;
 }
-Console.WriteLine("--------------------------------");
-Console.WriteLine($"Shipping Cost: ${shippingCost}");
-Console.WriteLine($"YOUR FINAL TOTAL IS: ${finalTotal}");
+Console.WriteLine("-------------------------------------");
+Console.WriteLine($"Calculated Total: ${totalSum}");
