@@ -1,12 +1,27 @@
-﻿//PROJECT: SMART CART TOTAL CALCULATOR
-double[] cartItems={19.99,45.50,12.00,99.99};
-double totalSum=0.00;
-Console.WriteLine("Iterating through your cart items...");
-Console.WriteLine("-------------------------------------");
-foreach(double price in cartItems)
+﻿// PROJECT: SHIFTING TO METHODS
+double shoesPrice = 120.00;
+double discountRate = 0.15;
+double discountAmount = CalculateDiscount(shoesPrice, discountRate);
+double discountedPrice = shoesPrice - discountAmount;
+double taxAmount = CalculateTax(discountedPrice);
+double finalTotal = discountedPrice + taxAmount;
+PrintReceipt(shoesPrice, discountAmount, taxAmount, finalTotal);
+static double CalculateDiscount(double price,double rate)
 {
-    Console.WriteLine($"Item found in cart: ${price}");
-    totalSum=totalSum + price;
+  return price * rate;
 }
-Console.WriteLine("-------------------------------------");
-Console.WriteLine($"Calculated Total: ${totalSum}");
+static double CalculateTax(double price)
+{
+    double taxRate = 0.18;
+    return price * taxRate;
+}
+static void PrintReceipt(double original,double discount,double tax,double total)
+{
+    Console.WriteLine("=== RECEIPT WITH METHODS ===");
+    Console.WriteLine($"Original Price: ${original}");
+    Console.WriteLine($"Discount Amount: -${discount}");
+    Console.WriteLine($"Tax (18%): ${tax}");
+    Console.WriteLine("----------------------------");
+    Console.WriteLine($"GRAND TOTAL: ${total}");
+    Console.WriteLine("============================");
+}
